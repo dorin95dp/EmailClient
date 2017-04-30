@@ -19,8 +19,8 @@
         <module name="EmailClient" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="EmailClient" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="EmailClient" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
