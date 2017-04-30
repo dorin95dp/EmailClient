@@ -14,10 +14,16 @@ public class Main {
                 POP3MessageInfo[] messages = client.listMessages();
                 System.out.println("Mesaje: " + messages.length);
                 System.out.println("Primul mesaj");
+
+                // verify to no messages
+                if (messages.length == 0) {
+                    System.out.println("No messages");
+                }
+
                 Reader r = client.retrieveMessage(messages[0].number);
                 BufferedReader br = new BufferedReader(r);
                 String line;
-                while((line = br.readLine()) != null) {
+                while ((line = br.readLine()) != null) {
                     System.out.println(line);
                 }
             } else {
@@ -25,7 +31,7 @@ public class Main {
             }
             client.logout();
             client.disconnect();
-        } catch (IOException ex){
+        } catch (IOException ex) {
             System.out.println("Error on connection");
         }
 
