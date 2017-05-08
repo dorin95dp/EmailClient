@@ -1,12 +1,10 @@
-import org.apache.commons.net.pop3.POP3Client;
-import org.apache.commons.net.pop3.POP3MessageInfo;
-import java.io.*;
+import org.apache.commons.mail.*;
 
 public class Main {
 
     public static void main( String[] args ) {
 
-        System.out.println("Client simplu de posta – citire mesaj");
+        System.out.println("Client simplu de posta – trimitere mesaj");
         try {
             POP3Client client = new POP3Client();
             client.connect("127.0.0.1",110);
@@ -33,7 +31,17 @@ public class Main {
             client.disconnect();
         } catch (IOException ex) {
             System.out.println("Error on connection");
+// =======
+        //     Email email = new SimpleEmail();
+        //     email.setHostName("127.0.0.1");
+        //     email.setSmtpPort(25);
+        //     email.setFrom("dorin@mail.md");
+        //     email.setSubject("Subject3");
+        //     email.setMsg("Message 3 - bla bla bla");
+        //     email.addTo("vasea@mail.md");
+        //     email.send();
+        // } catch (EmailException e) {
+        //     System.out.println(e.getMessage());
         }
-
     }
 }
